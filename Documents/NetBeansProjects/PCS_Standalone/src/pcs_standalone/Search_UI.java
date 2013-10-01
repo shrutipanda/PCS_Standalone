@@ -98,7 +98,7 @@ public class Search_UI extends javax.swing.JFrame {
             conn = DataBaseConnection.dbConnection();
             Statement stmt = null;
             stmt = (Statement) conn.createStatement();       
-           
+           String s= "test";
            String query="SELECT video_name,path,description from videos";
            ResultSet rs  = stmt.executeQuery(query);
            String key=jTextField2.getText();
