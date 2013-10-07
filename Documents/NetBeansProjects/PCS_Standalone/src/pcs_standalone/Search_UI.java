@@ -1,3 +1,5 @@
+package pcs_standalone;
+
 
 import java.io.FileNotFoundException;
 import java.sql.Connection;
@@ -44,12 +46,10 @@ public class Search_UI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\MLS\\Desktop\\New Folder (3)\\video streaming\\images\\Capture.JPG")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(249, 22, 202, 82);
+        jLabel1.setBounds(240, 20, 210, 80);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\MLS\\Desktop\\Capture-2.JPG")); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(38, 11, 67, 464);
@@ -77,7 +77,6 @@ public class Search_UI extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(180, 224, 160, 30);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\MLS\\Desktop\\New Folder (3)\\video streaming\\images\\black-background.jpeg")); // NOI18N
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(0, 0, 660, 500);
@@ -92,33 +91,46 @@ public class Search_UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
+
+       // String[] val={null};
+        //MediaPlayer.main(val);
+        String key=jTextField2.getText();
+        Result_UI.result(key);
+        
+         /*   try {
             // TODO add your handling code here:
             Connection conn=null;
             conn = DataBaseConnection.dbConnection();
             Statement stmt = null;
             stmt = (Statement) conn.createStatement();       
-           String s= "test";
+           
            String query="SELECT video_name,path,description from videos";
            ResultSet rs  = stmt.executeQuery(query);
-           String key=jTextField2.getText();
+           
            
            while(rs.next())
            {
                String vname=rs.getString(1);
-               String desc=rs.getString(2);
+               String path=rs.getString(2);
+               String desc=rs.getString(3);
                if(vname.contains(key))
                {
                        System.out.println(vname);
                        System.out.println();
-                       System.out.println(desc);
+                       System.out.println(path);
+                       String compath="file:///"+path;
+                       String[] val={compath};
+                       MediaPlayer.main(val);
                        
                }
                else if (desc.contains(key))
                {
                        System.out.println(vname);
                        System.out.println();
-                       System.out.println(desc);
+                       System.out.println(path);
+                       String compath="file:///"+path;
+                       String[] val={compath};
+                       MediaPlayer.main(val);
                     
                }
            }
@@ -126,7 +138,7 @@ public class Search_UI extends javax.swing.JFrame {
             Logger.getLogger(Search_UI.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(Search_UI.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        } */
                 
         
     }//GEN-LAST:event_jButton1ActionPerformed
