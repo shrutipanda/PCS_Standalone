@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 public class MediaPlayer extends Application {
     private static final String MEDIA_URL = "file:///E:/movie.mp4";
+    //private static final String MEDIA_URL = "file:///c:/documents/movie.mp4";
     private static String arg1;
 
     @Override public void start(Stage stage) {
